@@ -11,4 +11,8 @@ class CouponsController < ApplicationController
     @coupon = Coupon.create(coupon_code: params[:coupon_code], store: params[:store])
     redirect_to coupons_path
   end
+
+  def show
+    @coupon = Coupon.find_by_id(params[:id])
+  end
 end
